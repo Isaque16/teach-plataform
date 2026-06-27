@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3001
 
-CMD ["bun", "--watch", "src/index.ts"]
+CMD ["bun", "--watch", "src/http/server.ts"]

@@ -1,17 +1,17 @@
-import biIcon from "../../assets/icons/bi.svg";
-import lightIcon from "../../assets/icons/light.svg";
-import womanPink from "../../assets/images/join-cta/woman-pink.webp";
-import manTong from "../../assets/images/join-cta/man-tong.webp";
-import smilingMan from "../../assets/images/join-cta/smiling-man.webp";
-import dominoIcon from "../../assets/icons/domino.svg";
-import cubeIcon from "../../assets/icons/cube.svg";
-import justinBiber from "../../assets/images/join-cta/justin-biber.webp";
-import woman3 from "../../assets/images/join-cta/woman3.webp";
-import bubbleIcon from "../../assets/icons/bubble.svg";
-import man2 from "../../assets/images/join-cta/man2.webp";
-import girl3 from "../../assets/images/join-cta/girl3.webp";
-import windowIcon from "../../assets/icons/window.svg";
-import man3 from "../../assets/images/join-cta/man3.webp";
+import biIcon from '../../assets/icons/bi.svg'
+import lightIcon from '../../assets/icons/light.svg'
+import womanPink from '../../assets/images/join-cta/woman-pink.webp'
+import manTong from '../../assets/images/join-cta/man-tong.webp'
+import smilingMan from '../../assets/images/join-cta/smiling-man.webp'
+import dominoIcon from '../../assets/icons/domino.svg'
+import cubeIcon from '../../assets/icons/cube.svg'
+import justinBiber from '../../assets/images/join-cta/justin-biber.webp'
+import woman3 from '../../assets/images/join-cta/woman3.webp'
+import bubbleIcon from '../../assets/icons/bubble.svg'
+import man2 from '../../assets/images/join-cta/man2.webp'
+import girl3 from '../../assets/images/join-cta/girl3.webp'
+import windowIcon from '../../assets/icons/window.svg'
+import man3 from '../../assets/images/join-cta/man3.webp'
 
 export default function LeftIconsGroup() {
   return (
@@ -157,5 +157,5 @@ export default function LeftIconsGroup() {
         className="w-[25px] lg:w-[32px] rounded-full object-cover aspect-square absolute top-35 lg:top-45 right-0"
       />
     </div>
-  );
+  )
 }

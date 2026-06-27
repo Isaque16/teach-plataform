@@ -1,5 +1,5 @@
-import Heading from "./Heading.tsx";
-import Form from "./Form.tsx";
+import Heading from './Heading.tsx'
+import Form from './Form.tsx'
 
 export default function RequestCta() {
   return (
@@ -11,5 +11,5 @@ export default function RequestCta() {
       <Heading />
       <Form />
     </section>
-  );
+  )
 }

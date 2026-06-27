@@ -1,7 +1,7 @@
-import FooterNav from "./FooterNav.tsx";
-import FooterLogo from "./FooterLogo.tsx";
-import FooterNavItem from "./FooterNavItem.tsx";
-import FooterBottom from "./FooterBottom.tsx";
+import FooterNav from './FooterNav.tsx'
+import FooterLogo from './FooterLogo.tsx'
+import FooterNavItem from './FooterNavItem.tsx'
+import FooterBottom from './FooterBottom.tsx'
 
 export default function Footer() {
   return (
@@ -51,5 +51,5 @@ export default function Footer() {
 
       <FooterBottom />
     </footer>
-  );
+  )
 }

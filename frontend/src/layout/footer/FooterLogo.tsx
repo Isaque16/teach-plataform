@@ -20,5 +20,5 @@ export default function FooterLogo() {
         teach
       </a>
     </aside>
-  );
+  )
 }

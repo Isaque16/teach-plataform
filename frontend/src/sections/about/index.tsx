@@ -1,5 +1,5 @@
-import AboutContent from "./Content.tsx";
-import AboutImages from "./Images.tsx";
+import AboutContent from './Content.tsx'
+import AboutImages from './Images.tsx'
 
 export default function About() {
   return (
@@ -11,5 +11,5 @@ export default function About() {
       <AboutContent />
       <AboutImages />
     </section>
-  );
+  )
 }

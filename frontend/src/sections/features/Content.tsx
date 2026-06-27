@@ -1,11 +1,11 @@
-import scratchSvg from "../../assets/elements/scratch.svg";
-import LinkArrow from "../../components/LinkArrow.tsx";
+import scratchSvg from '../../assets/elements/scratch.svg'
+import LinkArrow from '../../components/LinkArrow.tsx'
 
 export default function FeaturesContent() {
   return (
     <div className="w-full lg:w-2/5 flex flex-col justify-center">
       <h2 id="features-heading" className="font-title text-2xl md:text-6xl z-1">
-        All the cool{" "}
+        All the cool{' '}
         <span className="relative inline-block">
           <span className="absolute -bottom-0 lg:-bottom-2 -right-0 pointer-events-none -z-1">
             <img
@@ -18,7 +18,7 @@ export default function FeaturesContent() {
               height={100}
               loading="lazy"
             />
-          </span>{" "}
+          </span>{' '}
           features
         </span>
       </h2>
@@ -30,5 +30,5 @@ export default function FeaturesContent() {
       </p>
       <LinkArrow link="/features" text="View all the features" />
     </div>
-  );
+  )
 }

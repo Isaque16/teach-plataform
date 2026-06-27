@@ -1,5 +1,5 @@
-import ExploreContent from "./Content.tsx";
-import ExploreImages from "./Images.tsx";
+import ExploreContent from './Content.tsx'
+import ExploreImages from './Images.tsx'
 
 export default function Explore() {
   return (
@@ -11,5 +11,5 @@ export default function Explore() {
       <ExploreImages />
       <ExploreContent />
     </section>
-  );
+  )
 }

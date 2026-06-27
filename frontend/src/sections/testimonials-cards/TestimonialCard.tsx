@@ -1,10 +1,10 @@
-import { memo } from "react";
+import { memo } from 'react'
 
 interface TestimonialCardProps {
-  text: string;
-  avatar: string;
-  name: string;
-  role: string;
+  text: string
+  avatar: string
+  name: string
+  role: string
 }
 
 const TestimonialCard = memo(
@@ -27,8 +27,8 @@ const TestimonialCard = memo(
           </div>
         </footer>
       </article>
-    );
-  },
-);
+    )
+  }
+)
 
-export default TestimonialCard;
+export default TestimonialCard

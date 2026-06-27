@@ -1,96 +1,96 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react'
 
-import testimonial1Image from "../../assets/images/testimonials-slide/girl.webp";
-import testimonial2Image from "../../assets/images/explore/studying.webp";
-import testimonial3Image from "../../assets/images/explore/studying3.webp";
-import balloonElement from "../../assets/elements/quote.webp";
-import cubesElement from "../../assets/elements/squares.webp";
+import testimonial1Image from '../../assets/images/testimonials-slide/girl.webp'
+import testimonial2Image from '../../assets/images/explore/studying.webp'
+import testimonial3Image from '../../assets/images/explore/studying3.webp'
+import balloonElement from '../../assets/elements/quote.webp'
+import cubesElement from '../../assets/elements/squares.webp'
 
 export default function TestimonialsSlide() {
   const testimonials = [
     {
-      text: "Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.",
-      name: "Marie Poirot",
-      company: "Bigapp",
+      text: 'Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.',
+      name: 'Marie Poirot',
+      company: 'Bigapp',
       image: testimonial1Image,
     },
     {
-      text: "Fermentum ipsum eget mattis tincidunt magna amet cras ullamcorper. Lectus volutpat ultrices vitae ornare etiam accumsan sit purus in. Augue facilisis eget mi eu.",
-      name: "Paul Smith",
-      company: "TechEUR",
+      text: 'Fermentum ipsum eget mattis tincidunt magna amet cras ullamcorper. Lectus volutpat ultrices vitae ornare etiam accumsan sit purus in. Augue facilisis eget mi eu.',
+      name: 'Paul Smith',
+      company: 'TechEUR',
       image: testimonial2Image,
     },
     {
-      text: "Amet vitae pellentesque suspendisse bibendum eget eget in. Risus nunc fermentum eu urna, turpis amet, consequat ut. Cursus id mauris volutpat integer ornare.",
-      name: "Ana Santos",
-      company: "DataCloud",
+      text: 'Amet vitae pellentesque suspendisse bibendum eget eget in. Risus nunc fermentum eu urna, turpis amet, consequat ut. Cursus id mauris volutpat integer ornare.',
+      name: 'Ana Santos',
+      company: 'DataCloud',
       image: testimonial3Image,
     },
     {
-      text: "Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.",
-      name: "Maria Fernanda",
-      company: "TeachBR",
+      text: 'Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu mattis est velit in. Nibh in purus sit convallis phasellus ut. At vel erat ultricies commodo. Neque suspendisse a habitasse commodo.',
+      name: 'Maria Fernanda',
+      company: 'TeachBR',
       image: testimonial1Image,
     },
     {
-      text: "Fermentum ipsum eget mattis tincidunt magna amet cras ullamcorper. Lectus volutpat ultrices vitae ornare etiam accumsan sit purus in. Augue facilisis eget mi eu.",
-      name: "John Doe",
-      company: "TeachUSA",
+      text: 'Fermentum ipsum eget mattis tincidunt magna amet cras ullamcorper. Lectus volutpat ultrices vitae ornare etiam accumsan sit purus in. Augue facilisis eget mi eu.',
+      name: 'John Doe',
+      company: 'TeachUSA',
       image: testimonial2Image,
     },
-  ];
+  ]
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [autoplay, setAutoplay] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [autoplay, setAutoplay] = useState(true)
 
   const goToSlide = useCallback(
     (slideIndex: number) => {
-      if (isTransitioning) return;
-      setIsTransitioning(true);
-      setCurrentIndex(slideIndex);
-      setTimeout(() => setIsTransitioning(false), 500);
+      if (isTransitioning) return
+      setIsTransitioning(true)
+      setCurrentIndex(slideIndex)
+      setTimeout(() => setIsTransitioning(false), 500)
     },
-    [isTransitioning],
-  );
+    [isTransitioning]
+  )
 
   const goToPrevious = useCallback(() => {
-    if (isTransitioning) return;
-    setAutoplay(false);
-    goToSlide(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1);
-  }, [currentIndex, testimonials.length, isTransitioning, goToSlide]);
+    if (isTransitioning) return
+    setAutoplay(false)
+    goToSlide(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)
+  }, [currentIndex, testimonials.length, isTransitioning, goToSlide])
 
   const goToNext = useCallback(() => {
-    if (isTransitioning) return;
-    goToSlide(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1);
-  }, [currentIndex, testimonials.length, isTransitioning, goToSlide]);
+    if (isTransitioning) return
+    goToSlide(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1)
+  }, [currentIndex, testimonials.length, isTransitioning, goToSlide])
 
   const handleDotClick = useCallback(
     (index: number) => {
-      setAutoplay(false);
-      goToSlide(index);
+      setAutoplay(false)
+      goToSlide(index)
     },
-    [goToSlide],
-  );
+    [goToSlide]
+  )
 
   useEffect(() => {
-    let interval: ReturnType<typeof setInterval> | null = null;
+    let interval: ReturnType<typeof setInterval> | null = null
 
     if (autoplay && !isTransitioning) {
-      interval = setInterval(() => goToNext(), 5000);
+      interval = setInterval(() => goToNext(), 5000)
     }
 
     return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [autoplay, isTransitioning, goToNext]);
+      if (interval) clearInterval(interval)
+    }
+  }, [autoplay, isTransitioning, goToNext])
 
   useEffect(() => {
     if (!autoplay) {
-      const timer = setTimeout(() => setAutoplay(true), 10000);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(() => setAutoplay(true), 10000)
+      return () => clearTimeout(timer)
     }
-  }, [autoplay]);
+  }, [autoplay])
 
   function SlideControls() {
     return (
@@ -141,7 +141,7 @@ export default function TestimonialsSlide() {
           </svg>
         </button>
       </div>
-    );
+    )
   }
 
   return (
@@ -178,8 +178,8 @@ export default function TestimonialsSlide() {
                     onClick={() => handleDotClick(index)}
                     className={`w-2 h-2 rounded-full transition-colors ${
                       currentIndex === index
-                        ? "bg-dark-blue !w-8"
-                        : "bg-white hover:bg-gray-300"
+                        ? 'bg-dark-blue !w-8'
+                        : 'bg-white hover:bg-gray-300'
                     }`}
                     aria-label={`Ir para slide ${index + 1}`}
                   />
@@ -229,8 +229,8 @@ export default function TestimonialsSlide() {
           role="presentation"
           className={`absolute -bottom-10 lg:-bottom-40 right-8 lg:right-28 w-[325px] lg:w-[455px] h-[375px] lg:h-[573px] rounded-[50px] transform ${
             isTransitioning
-              ? "transition-transform duration-500 -rotate-[40deg]"
-              : "transition-transform duration-700 -rotate-30"
+              ? 'transition-transform duration-500 -rotate-[40deg]'
+              : 'transition-transform duration-700 -rotate-30'
           } bg-dark-blue z-0`}
           aria-hidden="true"
         ></div>
@@ -247,5 +247,5 @@ export default function TestimonialsSlide() {
       </div>
       <SlideControls />
     </section>
-  );
+  )
 }

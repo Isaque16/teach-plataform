@@ -1,16 +1,16 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
 interface FooterNavItemProps {
-  href: string;
-  children: ReactNode;
-  badge?: string;
+  href: string
+  children: ReactNode
+  badge?: string
 }
 
 export default function FooterNavItem({
   href,
   children,
   badge,
-}: FooterNavItemProps) {
+}: Readonly<FooterNavItemProps>) {
   return (
     <li className="flex gap-2">
       <a href={href} className="link-hover font-light">
@@ -22,5 +22,5 @@ export default function FooterNavItem({
         </span>
       )}
     </li>
-  );
+  )
 }

@@ -1,53 +1,53 @@
-import blob from "../../assets/elements/blob_2.webp";
-import aboutWindow from "../../assets/images/about/window.webp";
-import PlanCard from "../../components/PlanCard.tsx";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import blob from '../../assets/elements/blob_2.webp'
+import aboutWindow from '../../assets/images/about/window.webp'
+import PlanCard from '../../components/PlanCard.tsx'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default function AboutImages() {
-  const containerRef = useRef(null);
-  const blobRef = useRef(null);
-  const windowRef = useRef(null);
-  const cardsContainerRef = useRef(null);
-  const card1Ref = useRef(null);
-  const card2Ref = useRef(null);
-  const card3Ref = useRef(null);
+  const containerRef = useRef(null)
+  const blobRef = useRef(null)
+  const windowRef = useRef(null)
+  const cardsContainerRef = useRef(null)
+  const card1Ref = useRef(null)
+  const card2Ref = useRef(null)
+  const card3Ref = useRef(null)
 
   useEffect(() => {
     gsap.set([blobRef.current, windowRef.current], {
       autoAlpha: 0,
       y: 20,
-    });
+    })
 
     gsap.set([card1Ref.current, card2Ref.current, card3Ref.current], {
       autoAlpha: 0,
       y: 15,
-    });
+    })
 
     const tl = gsap.timeline({
-      defaults: { ease: "power3.out" },
+      defaults: { ease: 'power3.out' },
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 75%",
-        end: "bottom 25%",
+        start: 'top 75%',
+        end: 'bottom 25%',
         once: true,
       },
-    });
+    })
 
     tl.to(blobRef.current, { autoAlpha: 1, y: 0, duration: 0.8 })
-      .to(windowRef.current, { autoAlpha: 1, y: 0, duration: 0.8 }, "-=0.4")
+      .to(windowRef.current, { autoAlpha: 1, y: 0, duration: 0.8 }, '-=0.4')
 
-      .to(card1Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.2")
-      .to(card2Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.3")
-      .to(card3Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.3");
+      .to(card1Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, '-=0.2')
+      .to(card2Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, '-=0.3')
+      .to(card3Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, '-=0.3')
 
     return () => {
-      tl.kill();
-    };
-  }, []);
+      tl.kill()
+    }
+  }, [])
 
   return (
     <div ref={containerRef} className="relative w-full lg:w-1/2 flex">
@@ -103,5 +103,5 @@ export default function AboutImages() {
         </div>
       </div>
     </div>
-  );
+  )
 }

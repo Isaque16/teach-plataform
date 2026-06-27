@@ -1,14 +1,14 @@
-import manBlue from "../../assets/images/join-cta/man-blue.webp";
-import man1 from "../../assets/images/join-cta/man1.webp";
-import clickIcon from "../../assets/icons/click.svg";
-import cartIcon from "../../assets/icons/cart.svg";
-import asyncIcon from "../../assets/icons/async.svg";
-import woman2 from "../../assets/images/join-cta/woman2.webp";
-import notificationIcon from "../../assets/icons/notfication.svg";
-import bagIcon from "../../assets/icons/bag.svg";
-import girl2 from "../../assets/images/join-cta/girl2.webp";
-import girl1 from "../../assets/images/join-cta/girl1.webp";
-import woman1 from "../../assets/images/join-cta/woman1.webp";
+import manBlue from '../../assets/images/join-cta/man-blue.webp'
+import man1 from '../../assets/images/join-cta/man1.webp'
+import clickIcon from '../../assets/icons/click.svg'
+import cartIcon from '../../assets/icons/cart.svg'
+import asyncIcon from '../../assets/icons/async.svg'
+import woman2 from '../../assets/images/join-cta/woman2.webp'
+import notificationIcon from '../../assets/icons/notfication.svg'
+import bagIcon from '../../assets/icons/bag.svg'
+import girl2 from '../../assets/images/join-cta/girl2.webp'
+import girl1 from '../../assets/images/join-cta/girl1.webp'
+import woman1 from '../../assets/images/join-cta/woman1.webp'
 
 export default function RightIconsGroup() {
   return (
@@ -124,5 +124,5 @@ export default function RightIconsGroup() {
         className="w-[73.45px] lg:w-[100px] rounded-full object-cover aspect-square absolute top-20 lg:top-0 right-0 lg:-right-28"
       />
     </div>
-  );
+  )
 }

@@ -1,29 +1,29 @@
-import heartIcon from "../../assets/icons/heart.svg";
-import diamondIcon from "../../assets/icons/diamond.svg";
-import hatIcon from "../../assets/icons/hat.svg";
-import StatItem from "./StatItem.tsx";
+import heartIcon from '../../assets/icons/heart.svg'
+import diamondIcon from '../../assets/icons/diamond.svg'
+import hatIcon from '../../assets/icons/hat.svg'
+import StatItem from './StatItem.tsx'
 
 export default function Statics() {
   const stats = [
     {
       icon: heartIcon,
-      iconAlt: "Heart icon",
-      value: "195",
-      label: "user countries",
+      iconAlt: 'Heart icon',
+      value: '195',
+      label: 'user countries',
     },
     {
       icon: diamondIcon,
-      iconAlt: "Diamond icon",
-      value: "1M",
-      label: "valued teachers",
+      iconAlt: 'Diamond icon',
+      value: '1M',
+      label: 'valued teachers',
     },
     {
       icon: hatIcon,
-      iconAlt: "Graduation cap icon",
-      value: "17M",
-      label: "happy students",
+      iconAlt: 'Graduation cap icon',
+      value: '17M',
+      label: 'happy students',
     },
-  ];
+  ]
 
   return (
     <section
@@ -45,5 +45,5 @@ export default function Statics() {
         />
       ))}
     </section>
-  );
+  )
 }

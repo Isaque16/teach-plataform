@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 
 export default function MessagesBubble() {
-  const message1Ref = useRef<HTMLSpanElement>(null);
-  const message2Ref = useRef<HTMLSpanElement>(null);
-  const message3Ref = useRef<HTMLSpanElement>(null);
-  const message4Ref = useRef<HTMLSpanElement>(null);
+  const message1Ref = useRef<HTMLSpanElement>(null)
+  const message2Ref = useRef<HTMLSpanElement>(null)
+  const message3Ref = useRef<HTMLSpanElement>(null)
+  const message4Ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     gsap.set(
@@ -19,14 +19,14 @@ export default function MessagesBubble() {
         autoAlpha: 0,
         y: 10,
       }
-    );
+    )
 
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 })
 
     tl.to(message1Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 })
-      .to(message2Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "+=0.7")
-      .to(message3Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "+=0.9")
-      .to(message4Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, "+=0.7")
+      .to(message2Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, '+=0.7')
+      .to(message3Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, '+=0.9')
+      .to(message4Ref.current, { autoAlpha: 1, y: 0, duration: 0.5 }, '+=0.7')
       .to(
         [
           message1Ref.current,
@@ -35,13 +35,13 @@ export default function MessagesBubble() {
           message4Ref.current,
         ],
         { autoAlpha: 0, y: -5, duration: 0.5, stagger: 0.2 },
-        "+=1.5"
-      );
+        '+=1.5'
+      )
 
     return () => {
-      tl.kill();
-    };
-  }, []);
+      tl.kill()
+    }
+  }, [])
 
   return (
     <div className="absolute flex flex-col gap-4 -top-3 lg:-top-25 left-18 lg:left-40 z-20">
@@ -74,5 +74,5 @@ export default function MessagesBubble() {
         </span>
       </div>
     </div>
-  );
+  )
 }

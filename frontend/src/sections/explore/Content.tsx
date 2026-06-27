@@ -1,11 +1,11 @@
-import planeIcon from "../../assets/icons/plane.svg";
-import LinkArrow from "../../components/LinkArrow.tsx";
+import planeIcon from '../../assets/icons/plane.svg'
+import LinkArrow from '../../components/LinkArrow.tsx'
 
 export default function ExploreContent() {
   return (
     <div className="w-full lg:w-1/2 flex flex-col justify-center">
       <h2 id="explore-heading" className="font-title text-2xl md:text-6xl">
-        Meet{" "}
+        Meet{' '}
         <span className="relative inline-block">
           international
           <span className="absolute -top-5 right-4 md:-top-15 pointer-events-none">
@@ -19,7 +19,7 @@ export default function ExploreContent() {
               className="w-[24px] h-[24px] md:w-[64px] md:h-[64px]"
             />
           </span>
-        </span>{" "}
+        </span>{' '}
         students & teachers
       </h2>
       <p className="font-text text-lg md:text-xl my-10 leading-[160%]">
@@ -33,5 +33,5 @@ export default function ExploreContent() {
         text="Explore teachers and students"
       />
     </div>
-  );
+  )
 }

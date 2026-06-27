@@ -1,61 +1,61 @@
-import woman1 from "../../assets/images/testimonials-cards/woman1.webp";
-import businessMan from "../../assets/images/testimonials-cards/business-man.webp";
-import womanPink from "../../assets/images/testimonials-cards/woman-pink.webp";
-import man1 from "../../assets/images/testimonials-cards/man1.webp";
-import { useCallback, useState } from "react";
-import TestimonialCard from "./TestimonialCard.tsx";
+import woman1 from '../../assets/images/testimonials-cards/woman1.webp'
+import businessMan from '../../assets/images/testimonials-cards/business-man.webp'
+import womanPink from '../../assets/images/testimonials-cards/woman-pink.webp'
+import man1 from '../../assets/images/testimonials-cards/man1.webp'
+import { useCallback, useState } from 'react'
+import TestimonialCard from './TestimonialCard.tsx'
 
 export default function TestimonialsCards() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const cardsPerView = 3;
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const cardsPerView = 3
 
   const testimonials = [
     {
-      text: "Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.",
+      text: 'Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.',
       avatar: woman1,
-      name: "Hellen Jummy",
-      role: "Financial Counselor",
+      name: 'Hellen Jummy',
+      role: 'Financial Counselor',
     },
     {
-      text: "Odio rhoncus ornare ut quam. Molestie vel duis quis scelerisque ut id. In tortor turpis viverra sagittis ultrices nisi, nec tortor. Vestibulum, ultrices ultricies neque, hac ultricies dolor.",
+      text: 'Odio rhoncus ornare ut quam. Molestie vel duis quis scelerisque ut id. In tortor turpis viverra sagittis ultrices nisi, nec tortor. Vestibulum, ultrices ultricies neque, hac ultricies dolor.',
       avatar: businessMan,
-      name: "Ralph Edwards",
-      role: "Math Teacher",
+      name: 'Ralph Edwards',
+      role: 'Math Teacher',
     },
     {
-      text: "Sagittis nunc egestas leo et malesuada urna risus. Morbi proin et cras aliquam. Diam tellus, amet, hac imperdiet. Tellus mi volutpat tellus, congue malesuada sit nisl donec a.",
+      text: 'Sagittis nunc egestas leo et malesuada urna risus. Morbi proin et cras aliquam. Diam tellus, amet, hac imperdiet. Tellus mi volutpat tellus, congue malesuada sit nisl donec a.',
       avatar: womanPink,
-      name: "Hellena John",
-      role: "Psychology Student",
+      name: 'Hellena John',
+      role: 'Psychology Student',
     },
     {
-      text: "Sapien, sollicitudin et vitae id et laoreet sapien consectetur. Felis egestas egestas amet aliquam sit euismod. Pellentesque neque, sed ut volutpat. Ullamcorper in at nulla dignissim.",
+      text: 'Sapien, sollicitudin et vitae id et laoreet sapien consectetur. Felis egestas egestas amet aliquam sit euismod. Pellentesque neque, sed ut volutpat. Ullamcorper in at nulla dignissim.',
       avatar: man1,
-      name: "Bob Brown",
-      role: "Bob Brown, Designer",
+      name: 'Bob Brown',
+      role: 'Bob Brown, Designer',
     },
-  ];
+  ]
 
   const slideLeft = useCallback(() => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
+    if (isTransitioning) return
+    setIsTransitioning(true)
     setCurrentIndex((prevIndex) =>
       prevIndex === 0
         ? Math.max(0, testimonials.length - cardsPerView)
-        : prevIndex - 1,
-    );
-    setTimeout(() => setIsTransitioning(false), 300);
-  }, [isTransitioning, testimonials.length, cardsPerView]);
+        : prevIndex - 1
+    )
+    setTimeout(() => setIsTransitioning(false), 300)
+  }, [isTransitioning, testimonials.length, cardsPerView])
 
   const slideRight = useCallback(() => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
+    if (isTransitioning) return
+    setIsTransitioning(true)
     setCurrentIndex((prevIndex) =>
-      prevIndex >= testimonials.length - cardsPerView ? 0 : prevIndex + 1,
-    );
-    setTimeout(() => setIsTransitioning(false), 300);
-  }, [isTransitioning, testimonials.length, cardsPerView]);
+      prevIndex >= testimonials.length - cardsPerView ? 0 : prevIndex + 1
+    )
+    setTimeout(() => setIsTransitioning(false), 300)
+  }, [isTransitioning, testimonials.length, cardsPerView])
 
   return (
     <section
@@ -150,5 +150,5 @@ export default function TestimonialsCards() {
         </div>
       </div>
     </section>
-  );
+  )
 }

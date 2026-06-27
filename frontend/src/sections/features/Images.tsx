@@ -1,30 +1,30 @@
-import blobImg from "../../assets/elements/blob_1.webp";
-import PlanCard from "../../components/PlanCard.tsx";
-import studyingImg from "../../assets/images/features/studying.webp";
-import womanImg from "../../assets/images/features/woman.webp";
-import coupleImg from "../../assets/images/features/couple.webp";
-import sofaImg from "../../assets/images/features/sofa.webp";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import blobImg from '../../assets/elements/blob_1.webp'
+import PlanCard from '../../components/PlanCard.tsx'
+import studyingImg from '../../assets/images/features/studying.webp'
+import womanImg from '../../assets/images/features/woman.webp'
+import coupleImg from '../../assets/images/features/couple.webp'
+import sofaImg from '../../assets/images/features/sofa.webp'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 export default function FeaturesImages() {
-  const containerRef = useRef(null);
-  const blobRef = useRef(null);
-  const topGroupRef = useRef(null);
-  const planCardRef = useRef(null);
-  const figureTopRef = useRef(null);
-  const bottomGroupRef = useRef(null);
-  const figureLeftRef = useRef(null);
-  const figureRightRef = useRef(null);
+  const containerRef = useRef(null)
+  const blobRef = useRef(null)
+  const topGroupRef = useRef(null)
+  const planCardRef = useRef(null)
+  const figureTopRef = useRef(null)
+  const bottomGroupRef = useRef(null)
+  const figureLeftRef = useRef(null)
+  const figureRightRef = useRef(null)
 
   useEffect(() => {
     gsap.set(blobRef.current, {
       autoAlpha: 0,
       scale: 0.9,
-    });
+    })
 
     gsap.set(
       [
@@ -36,32 +36,32 @@ export default function FeaturesImages() {
       {
         autoAlpha: 0,
         y: 20,
-      },
-    );
+      }
+    )
 
     const tl = gsap.timeline({
-      defaults: { ease: "power3.out" },
+      defaults: { ease: 'power3.out' },
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 75%",
+        start: 'top 75%',
         once: true,
       },
-    });
+    })
 
     tl.to(blobRef.current, { autoAlpha: 1, scale: 1, duration: 0.8 })
-      .to(planCardRef.current, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.4")
-      .to(figureTopRef.current, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.3")
-      .to(figureLeftRef.current, { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.2")
+      .to(planCardRef.current, { autoAlpha: 1, y: 0, duration: 0.6 }, '-=0.4')
+      .to(figureTopRef.current, { autoAlpha: 1, y: 0, duration: 0.6 }, '-=0.3')
+      .to(figureLeftRef.current, { autoAlpha: 1, y: 0, duration: 0.6 }, '-=0.2')
       .to(
         figureRightRef.current,
         { autoAlpha: 1, y: 0, duration: 0.6 },
-        "-=0.3",
-      );
+        '-=0.3'
+      )
 
     return () => {
-      tl.kill();
-    };
-  }, []);
+      tl.kill()
+    }
+  }, [])
 
   return (
     <div
@@ -144,5 +144,5 @@ export default function FeaturesImages() {
         </figure>
       </div>
     </div>
-  );
+  )
 }

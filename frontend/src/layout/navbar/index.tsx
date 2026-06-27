@@ -1,8 +1,8 @@
-import { useState } from "react";
-import logo from "/logo.svg";
+import { useState } from 'react'
+import logo from '/logo.svg'
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <nav className="navbar py-5 px-4 md:px-20" aria-label="Main navigation">
@@ -145,5 +145,5 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-  );
+  )
 }

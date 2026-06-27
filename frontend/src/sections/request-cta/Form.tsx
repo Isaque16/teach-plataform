@@ -1,55 +1,55 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 export default function Form() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [errors, setErrors] = useState({ email: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [errors, setErrors] = useState({ email: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   const validateForm = (): boolean => {
-    const newErrors = { email: "", message: "" };
-    let isValid = true;
+    const newErrors = { email: '', message: '' }
+    let isValid = true
 
     if (!email) {
-      newErrors.email = "Email is required";
-      isValid = false;
+      newErrors.email = 'Email is required'
+      isValid = false
     } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-      newErrors.email = "Email invalid";
-      isValid = false;
+      newErrors.email = 'Email invalid'
+      isValid = false
     }
 
     if (!message.trim()) {
-      newErrors.message = "Message is required";
-      isValid = false;
+      newErrors.message = 'Message is required'
+      isValid = false
     }
 
-    setErrors(newErrors);
-    return isValid;
-  };
+    setErrors(newErrors)
+    return isValid
+  }
 
   const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>,
+    e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
-    e.preventDefault();
+    e.preventDefault()
 
-    if (!validateForm()) return;
+    if (!validateForm()) return
 
-    setIsSubmitting(true);
+    setIsSubmitting(true)
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setSubmitSuccess(true);
-      setEmail("");
-      setMessage("");
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      setSubmitSuccess(true)
+      setEmail('')
+      setMessage('')
 
-      setTimeout(() => setSubmitSuccess(false), 5000);
+      setTimeout(() => setSubmitSuccess(false), 5000)
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error)
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <form className="w-full lg:w-2/5 mt-10" onSubmit={handleSubmit} noValidate>
@@ -67,11 +67,11 @@ export default function Form() {
           required
           aria-required="true"
           aria-invalid={!!errors.email}
-          aria-describedby={errors.email ? "email-error" : undefined}
+          aria-describedby={errors.email ? 'email-error' : undefined}
           className={`bg-white text-black rounded-lg p-4 transition-all ${
             errors.email
-              ? "border-2 border-red-500 ring-1 ring-red-500"
-              : "border border-transparent"
+              ? 'border-2 border-red-500 ring-1 ring-red-500'
+              : 'border border-transparent'
           }`}
         />
         {errors.email && (
@@ -107,11 +107,11 @@ export default function Form() {
           value={message}
           aria-required="true"
           aria-invalid={!!errors.message}
-          aria-describedby={errors.message ? "message-error" : undefined}
+          aria-describedby={errors.message ? 'message-error' : undefined}
           className={`bg-white text-black rounded-lg p-4 min-h-[120px] transition-all ${
             errors.message
-              ? "border-2 border-red-500 ring-1 ring-red-500"
-              : "border border-transparent"
+              ? 'border-2 border-red-500 ring-1 ring-red-500'
+              : 'border border-transparent'
           }`}
           required
         ></textarea>
@@ -156,9 +156,9 @@ export default function Form() {
         {isSubmitting ? (
           <span className="loading loading-spinner loading-lg"></span>
         ) : (
-          "Request Demo"
+          'Request Demo'
         )}
       </button>
     </form>
-  );
+  )
 }

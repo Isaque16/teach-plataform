@@ -1,9 +1,9 @@
 interface PlanCardProps {
-  width: string;
-  plan: string;
-  name: string;
-  text: string;
-  link: string;
+  width: string
+  plan: string
+  name: string
+  text: string
+  link: string
 }
 
 export default function PlanCard({
@@ -13,20 +13,20 @@ export default function PlanCard({
   text,
   link,
 }: PlanCardProps) {
-  let planColor: string;
+  let planColor: string
 
   switch (plan) {
-    case "New":
-      planColor = "bg-green-600/10 text-green-700";
-      break;
-    case "Popular":
-      planColor = "bg-blue-600/10 text-blue-700";
-      break;
-    case "Featured":
-      planColor = "bg-purple-600/10 text-purple-700";
-      break;
+    case 'New':
+      planColor = 'bg-green-600/10 text-green-700'
+      break
+    case 'Popular':
+      planColor = 'bg-blue-600/10 text-blue-700'
+      break
+    case 'Featured':
+      planColor = 'bg-purple-600/10 text-purple-700'
+      break
     default:
-      planColor = "bg-gray-600/10 text-gray-700";
+      planColor = 'bg-gray-600/10 text-gray-700'
   }
 
   return (
@@ -46,5 +46,5 @@ export default function PlanCard({
         Take a Lesson
       </a>
     </article>
-  );
+  )
 }

@@ -1,6 +1,6 @@
 interface LinkArrowProps {
-  link: string;
-  text: string;
+  link: string
+  text: string
 }
 
 export default function LinkArrow({ link, text }: LinkArrowProps) {
@@ -25,5 +25,5 @@ export default function LinkArrow({ link, text }: LinkArrowProps) {
         />
       </svg>
     </a>
-  );
+  )
 }

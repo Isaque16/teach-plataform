@@ -1,9 +1,9 @@
-import teacherImg from "../../assets/images/hero/teacher.webp";
-import studentImg from "../../assets/images/hero/student.webp";
-import cloudIcon from "../../assets/icons/cloud.svg";
-import cubeIcon from "../../assets/icons/cube.svg";
-import terminalIcon from "../../assets/icons/terminal.svg";
-import MessagesBubble from "./BubbleMessages.tsx";
+import teacherImg from '../../assets/images/hero/teacher.webp'
+import studentImg from '../../assets/images/hero/student.webp'
+import cloudIcon from '../../assets/icons/cloud.svg'
+import cubeIcon from '../../assets/icons/cube.svg'
+import terminalIcon from '../../assets/icons/terminal.svg'
+import MessagesBubble from './BubbleMessages.tsx'
 
 export default function HeroImages() {
   return (
@@ -64,5 +64,5 @@ export default function HeroImages() {
         </div>
       </div>
     </div>
-  );
+  )
 }

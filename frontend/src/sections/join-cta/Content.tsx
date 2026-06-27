@@ -18,5 +18,5 @@ export default function CtaContent() {
         Sign Up Now
       </a>
     </div>
-  );
+  )
 }

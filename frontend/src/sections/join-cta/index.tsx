@@ -1,6 +1,6 @@
-import LeftIconsGroup from "./LeftIconsGroup.tsx";
-import CtaContent from "./Content.tsx";
-import RightIconsGroup from "./RightIconsGroup.tsx";
+import LeftIconsGroup from './LeftIconsGroup.tsx'
+import CtaContent from './Content.tsx'
+import RightIconsGroup from './RightIconsGroup.tsx'
 
 export default function JoinCta() {
   return (
@@ -13,5 +13,5 @@ export default function JoinCta() {
       <CtaContent />
       <RightIconsGroup />
     </section>
-  );
+  )
 }

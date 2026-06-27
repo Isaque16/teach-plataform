@@ -1,12 +1,12 @@
-import scratch from "../../assets/elements/scratch.svg";
-import check from "../../assets/icons/check.svg";
-import LinkArrow from "../../components/LinkArrow.tsx";
+import scratch from '../../assets/elements/scratch.svg'
+import check from '../../assets/icons/check.svg'
+import LinkArrow from '../../components/LinkArrow.tsx'
 
 export default function AboutContent() {
   return (
     <div className="w-full lg:w-2/5 flex flex-col justify-center items-start">
       <h2 id="about-heading" className="font-title text-2xl lg:text-6xl z-1">
-        An{" "}
+        An{' '}
         <span className="relative inline-block">
           <span className="absolute -bottom-0 lg:-bottom-3 -right-0 pointer-events-none -z-1">
             <img
@@ -19,9 +19,9 @@ export default function AboutContent() {
               className="w-[150px] lg:w-[270px]"
               loading="lazy"
             />
-          </span>{" "}
+          </span>{' '}
           all-in-one
-        </span>{" "}
+        </span>{' '}
         app that makes it easier
       </h2>
       <p className="block lg:hidden mt-5 font-text text-lg">
@@ -38,7 +38,7 @@ export default function AboutContent() {
             aria-hidden="true"
             width={15}
             height={15}
-          />{" "}
+          />{' '}
           Est et in pharetra magna adipiscing ornare aliquam.
         </li>
         <li className="flex items-baseline gap-3">
@@ -49,7 +49,7 @@ export default function AboutContent() {
             aria-hidden="true"
             width={15}
             height={15}
-          />{" "}
+          />{' '}
           Tellus arcu sed consequat ac velit ut eu blandit.
         </li>
         <li className="flex items-baseline gap-3">
@@ -60,11 +60,11 @@ export default function AboutContent() {
             aria-hidden="true"
             width={15}
             height={15}
-          />{" "}
+          />{' '}
           Ullamcorper ornare in et egestas dolor orci.
         </li>
       </ul>
       <LinkArrow link="/about-app" text="Find more about the app" />
     </div>
-  );
+  )
 }

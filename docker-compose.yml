@@ -1,34 +1,32 @@
-name: teach_platform
+version: '3.7'
 
 services:
   postgres_db:
-    image: postgres:16-alpine
-    container_name: teach_postgres
-    restart: always
+    image: bitnami/postgresql:latest
+    container_name: teach_postgres_db
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/bitnami/postgresql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      test: ['CMD-SHELL', 'pg_isready -U ${DB_USER} -d ${DB_NAME}']
       interval: 5s
       timeout: 5s
       retries: 5
 
-  api:
+  elysia_api:
     build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: teach_elysia_api
-    restart: always
     ports:
-      - "3001:3001"
+      - '3333:3333'
     environment:
-      - DATABASE_URL=postgres://${DB_USER}:${DB_PASSWORD}@postgres_db:5432/${DB_NAME}
+      - DATABASE_URL=${DATABASE_URL}
       - NODE_ENV=${NODE_ENV}
     volumes:
       - ./backend:/usr/src/app
@@ -37,19 +35,22 @@ services:
       postgres_db:
         condition: service_healthy
 
-  app:
+  react_app:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: teach_react_app
-    restart: always
     ports:
-      - "3000:3000"
+      - '8080:8080'
     volumes:
       - ./frontend:/app
       - /app/node_modules
     depends_on:
-      - api
+      - elysia_api
 
 volumes:
   postgres_data:
+
+networks:
+  teach_network:
+    driver: bridge

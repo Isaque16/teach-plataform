@@ -1,5 +1,5 @@
-import FeaturesContent from "./Content.tsx";
-import FeaturesImages from "./Images.tsx";
+import FeaturesContent from './Content.tsx'
+import FeaturesImages from './Images.tsx'
 
 export default function Features() {
   return (
@@ -11,5 +11,5 @@ export default function Features() {
       <FeaturesContent />
       <FeaturesImages />
     </section>
-  );
+  )
 }

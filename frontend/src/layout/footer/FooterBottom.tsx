@@ -1,6 +1,6 @@
-import global from "../../assets/icons/global.svg";
-import euro from "../../assets/icons/euro.svg";
-import accessibility from "../../assets/icons/accessibility.svg";
+import global from '../../assets/icons/global.svg'
+import euro from '../../assets/icons/euro.svg'
+import accessibility from '../../assets/icons/accessibility.svg'
 
 export default function FooterBottom() {
   return (
@@ -51,5 +51,5 @@ export default function FooterBottom() {
         </ul>
       </div>
     </>
-  );
+  )
 }

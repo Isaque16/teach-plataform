@@ -8,5 +8,5 @@ export default function Heading() {
         Sit elit feugiat turpis sed integer integer accumsan turpis.
       </p>
     </div>
-  );
+  )
 }

@@ -1,19 +1,19 @@
-import icon1 from "../../assets/icons/icon1.svg";
-import icon2 from "../../assets/icons/icon2.svg";
-import icon3 from "../../assets/icons/icon3.svg";
-import icon4 from "../../assets/icons/icon4.svg";
-import icon5 from "../../assets/icons/icon5.svg";
-import scratchIcon from "../../assets/elements/scratch.svg";
-import playIcon from "../../assets/icons/play.svg";
+import icon1 from '../../assets/icons/icon1.svg'
+import icon2 from '../../assets/icons/icon2.svg'
+import icon3 from '../../assets/icons/icon3.svg'
+import icon4 from '../../assets/icons/icon4.svg'
+import icon5 from '../../assets/icons/icon5.svg'
+import scratchIcon from '../../assets/elements/scratch.svg'
+import playIcon from '../../assets/icons/play.svg'
 
 export default function HeroContent() {
   const partnerCompanies = [
-    { icon: icon1, name: "Partner 1" },
-    { icon: icon2, name: "Partner 2" },
-    { icon: icon3, name: "Partner 3" },
-    { icon: icon4, name: "Partner 4" },
-    { icon: icon5, name: "Partner 5" },
-  ];
+    { icon: icon1, name: 'Partner 1' },
+    { icon: icon2, name: 'Partner 2' },
+    { icon: icon3, name: 'Partner 3' },
+    { icon: icon4, name: 'Partner 4' },
+    { icon: icon5, name: 'Partner 5' },
+  ]
 
   return (
     <div className="w-full lg:w-[575px] flex flex-col">
@@ -30,9 +30,9 @@ export default function HeroContent() {
               height={100}
               loading="lazy"
             />
-          </span>{" "}
+          </span>{' '}
           Teach
-        </span>{" "}
+        </span>{' '}
         students worldwide
       </h1>
       <p className="my-8 lg:my-10 font-text text-lg lg:text-2xl leading-[160%]">
@@ -58,7 +58,7 @@ export default function HeroContent() {
             width={20}
             height={20}
             loading="lazy"
-          />{" "}
+          />{' '}
           View Demo
         </a>
       </div>
@@ -81,5 +81,5 @@ export default function HeroContent() {
         </div>
       </div>
     </div>
-  );
+  )
 }

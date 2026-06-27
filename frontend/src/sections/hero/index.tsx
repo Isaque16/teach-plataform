@@ -1,5 +1,5 @@
-import HeroContent from "./Content.tsx";
-import HeroImages from "./Images.tsx";
+import HeroContent from './Content.tsx'
+import HeroImages from './Images.tsx'
 
 export default function Hero() {
   return (
@@ -7,5 +7,5 @@ export default function Hero() {
       <HeroContent />
       <HeroImages />
     </header>
-  );
+  )
 }
